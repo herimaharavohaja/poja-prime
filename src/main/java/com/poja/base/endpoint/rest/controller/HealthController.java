@@ -46,7 +46,7 @@ public class HealthController {
 
  @GetMapping("/new-prime")
   public BigInteger generatePrime(){
-    BigInteger prime = BigInteger.probablePrime(10000,new Random());
+    BigInteger prime = new BigInteger.probablePrime(10000,new Random());
     return prime;
   }
 }
