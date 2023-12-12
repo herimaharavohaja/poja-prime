@@ -1,7 +1,7 @@
 package com.poja.base.endpoint.rest.controller;
 
 import static java.util.UUID.randomUUID;
-
+import java.math.BigInteger;
 import java.util.List;
 import lombok.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,5 +42,11 @@ public class HealthController {
 
     Thread.sleep(20_000);
     return dummyUuidRepository.findById(randomUuid).map(DummyUuid::getId).orElseThrow();
+  }
+
+ @GetMapping("/new-prime")
+  public BigInteger generatePrime(){
+    BigInteger prime = BigInteger.probablePrime(10000,new Random());
+    return prime;
   }
 }
