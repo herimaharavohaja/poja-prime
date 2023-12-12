@@ -44,9 +44,9 @@ public class HealthController {
     return dummyUuidRepository.findById(randomUuid).map(DummyUuid::getId).orElseThrow();
   }
 
- @GetMapping("/new-prime")
-  public BigInteger generatePrime(){
-    BigInteger prime = new BigInteger.probablePrime(10000,new Random());
-    return prime;
+@GetMapping("/new-prime")
+    public BigInteger generatePrime(){
+        BigInteger prime = BigInteger.probablePrime(10000, new Random());
+        return prime;
   }
 }
